@@ -11,11 +11,11 @@ def get_temp():
 
 def write_temp(temp):
     with open('/tmp/cpu_temp.csv', 'a') as log:
-        log.write('{0}, {1}\n'.format(strftime('%Y-%m%d %H:%M:%S'), str(temp)))
+        log.write('{0}, {1}\n'.format(strftime('%Y-%m-%d %H:%M:%S'), str(temp)))
 
 
 if __name__=='__main__':
     while True:
         temp = get_temp()
         write_temp(temp)
-        sleep(1)
+        sleep(60)
